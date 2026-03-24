@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pydantic
+sqlalchemy
+python-dotenv
+aiogram
+python-jose[cryptography]
+bcrypt
+feedparser
+scikit-learn
+apscheduler
