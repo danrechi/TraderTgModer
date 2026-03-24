@@ -63,7 +63,7 @@ export default function Rules() {
       </div>
 
       <div className="add-form">
-        <h4>➕ Добавить правило</h4>
+        <h4>Добавить правило</h4>
         <form onSubmit={handleAdd}>
           <div className="form-row">
             <div className="form-group">
@@ -99,12 +99,12 @@ export default function Rules() {
           <h3>Все правила ({rules.length})</h3>
         </div>
 
-        {error   && <div className="error-banner">⚠️ {error}</div>}
-        {loading && <div className="loading-state">⏳ Загрузка...</div>}
+        {error   && <div className="error-banner">{error}</div>}
+        {loading && <div className="loading-state">Загрузка...</div>}
 
         {!loading && !error && rules.length === 0 && (
           <div className="empty-state">
-            <div className="empty-icon">🛡️</div>
+            <div className="empty-icon">R</div>
             <p>Правил пока нет. Добавьте первое правило фильтрации.</p>
           </div>
         )}
@@ -122,7 +122,7 @@ export default function Rules() {
                     <td><span className={`badge ${TYPE[r.type]?.cls ?? 'badge-blue'}`}>{TYPE[r.type]?.label ?? r.type}</span></td>
                     <td style={{ fontFamily: 'monospace', fontSize: '13px' }}>{r.pattern}</td>
                     <td><span className={`badge ${ACTION[r.action]?.cls ?? 'badge-red'}`}>{ACTION[r.action]?.label ?? r.action}</span></td>
-                    <td><button className="btn btn-danger" onClick={() => handleDelete(r.id)}>🗑 Удалить</button></td>
+                    <td><button className="btn btn-danger" onClick={() => handleDelete(r.id)}>Удалить</button></td>
                   </tr>
                 ))}
               </tbody>

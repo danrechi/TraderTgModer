@@ -51,7 +51,7 @@ export default function Sources() {
       </div>
 
       <div className="add-form">
-        <h4>➕ Добавить источник</h4>
+        <h4>Добавить источник</h4>
         <form onSubmit={handleAdd}>
           <div className="form-row">
             <div className="form-group">
@@ -75,12 +75,12 @@ export default function Sources() {
           <h3>Все источники ({sources.length})</h3>
         </div>
 
-        {error   && <div className="error-banner">⚠️ {error}</div>}
-        {loading && <div className="loading-state">⏳ Загрузка...</div>}
+        {error   && <div className="error-banner">{error}</div>}
+        {loading && <div className="loading-state">Загрузка...</div>}
 
         {!loading && !error && sources.length === 0 && (
           <div className="empty-state">
-            <div className="empty-icon">📡</div>
+            <div className="empty-icon">S</div>
             <p>Источников пока нет. Добавьте первый RSS-источник.</p>
           </div>
         )}
@@ -103,7 +103,7 @@ export default function Sources() {
                       </span>
                     </td>
                     <td>
-                      <button className="btn btn-danger" onClick={() => handleDelete(s.id)}>🗑 Удалить</button>
+                      <button className="btn btn-danger" onClick={() => handleDelete(s.id)}>Удалить</button>
                     </td>
                   </tr>
                 ))}

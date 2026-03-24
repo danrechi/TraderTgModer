@@ -19,15 +19,15 @@ export default function Dashboard() {
   }, [])
 
   const stats = [
-    { icon: '📡', label: 'RSS-источников',    value: counts.sources, bg: 'rgba(99,179,237,0.12)'  },
-    { icon: '📰', label: 'Новостей',          value: counts.news,    bg: 'rgba(72,187,120,0.12)'  },
-    { icon: '🛡️', label: 'Правил фильтрации', value: counts.rules,   bg: 'rgba(159,122,234,0.12)' },
+    { icon: 'S', label: 'RSS-источников',    value: counts.sources, bg: 'rgba(99,179,237,0.12)'  },
+    { icon: 'N', label: 'Новостей',          value: counts.news,    bg: 'rgba(72,187,120,0.12)'  },
+    { icon: 'R', label: 'Правил фильтрации', value: counts.rules,   bg: 'rgba(159,122,234,0.12)' },
   ]
 
   const quickLinks = [
-    { to: '/sources', icon: '📡', title: 'Управление источниками', desc: 'Добавить и настроить RSS-ленты' },
-    { to: '/news',    icon: '📰', title: 'Просмотр новостей',     desc: 'Последние статьи из RSS'        },
-    { to: '/rules',   icon: '🛡️', title: 'Правила антиспама',     desc: 'Настроить фильтрацию сообщений' },
+    { to: '/sources', icon: 'S', title: 'Управление источниками', desc: 'Добавить и настроить RSS-ленты' },
+    { to: '/news',    icon: 'N', title: 'Просмотр новостей',     desc: 'Последние статьи из RSS'        },
+    { to: '/rules',   icon: 'R', title: 'Правила антиспама',     desc: 'Настроить фильтрацию сообщений' },
   ]
 
   return (

@@ -29,7 +29,7 @@ export default function Login() {
   return (
     <div className="login-bg">
       <div className="login-card">
-        <div className="login-logo">📈</div>
+        <div className="login-logo">TN</div>
         <h1 className="login-title">Trader News Bot</h1>
         <p className="login-subtitle">Admin Panel</p>
 
