@@ -1,0 +1,5 @@
+timestamp,model,cv_accuracy,cv_std,train_accuracy,macro_f1,macro_precision,macro_recall,fit_time_sec,n_samples,n_classes
+2026-04-10T11:59:10,Logistic Regression (Baseline),0.5462,0.0457,1.0,1.0,1.0,1.0,0.603,401,7
+2026-04-10T11:59:11,Naive Bayes,0.5388,0.0578,1.0,1.0,1.0,1.0,0.126,401,7
+2026-04-10T11:59:11,SVM (LinearSVC),0.5737,0.0385,1.0,1.0,1.0,1.0,0.091,401,7
+2026-04-10T11:59:13,Random Forest,0.3866,0.0414,1.0,1.0,1.0,1.0,2.195,401,7

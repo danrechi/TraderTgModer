@@ -1,0 +1,54 @@
+[
+  {
+    "timestamp": "2026-04-10T11:59:10",
+    "model": "Logistic Regression (Baseline)",
+    "cv_accuracy": 0.5462,
+    "cv_std": 0.0457,
+    "train_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "fit_time_sec": 0.603,
+    "n_samples": 401,
+    "n_classes": 7
+  },
+  {
+    "timestamp": "2026-04-10T11:59:11",
+    "model": "Naive Bayes",
+    "cv_accuracy": 0.5388,
+    "cv_std": 0.0578,
+    "train_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "fit_time_sec": 0.126,
+    "n_samples": 401,
+    "n_classes": 7
+  },
+  {
+    "timestamp": "2026-04-10T11:59:11",
+    "model": "SVM (LinearSVC)",
+    "cv_accuracy": 0.5737,
+    "cv_std": 0.0385,
+    "train_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "fit_time_sec": 0.091,
+    "n_samples": 401,
+    "n_classes": 7
+  },
+  {
+    "timestamp": "2026-04-10T11:59:13",
+    "model": "Random Forest",
+    "cv_accuracy": 0.3866,
+    "cv_std": 0.0414,
+    "train_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "fit_time_sec": 2.195,
+    "n_samples": 401,
+    "n_classes": 7
+  }
+]

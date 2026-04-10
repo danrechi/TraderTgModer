@@ -1,0 +1,74 @@
+version: "3.9"
+
+# ── Общая сеть для всех сервисов ──────────────────────────────────────────────
+networks:
+  trader_net:
+    driver: bridge
+
+# ── Тома для хранения данных ──────────────────────────────────────────────────
+volumes:
+  db_data:    # SQLite-файл (персистентный)
+  logs_data:  # Shared-логи backend и бота
+
+# ── Сервисы ───────────────────────────────────────────────────────────────────
+services:
+
+  # ── 1. Backend: FastAPI ──────────────────────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: trader_backend
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - DATABASE_URL=sqlite:////data/trader_news.db
+    ports:
+      - "8000:8000"
+    volumes:
+      - db_data:/data
+      - logs_data:/app/logs
+    networks:
+      - trader_net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  # ── 2. Bot: Telegram-бот ────────────────────────────────────────────────────
+  bot:
+    build:
+      context: .
+      dockerfile: bot/Dockerfile
+    container_name: trader_bot
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - DATABASE_URL=sqlite:////data/trader_news.db
+      - BACKEND_URL=http://backend:8000
+    depends_on:
+      backend:
+        condition: service_healthy
+    volumes:
+      - db_data:/data
+      - logs_data:/app/logs
+    networks:
+      - trader_net
+
+  # ── 3. Frontend: React + Nginx ──────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: http://localhost:8000
+    container_name: trader_frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - trader_net
